@@ -1,5 +1,7 @@
 package com.codedifferently;
 
+import java.util.Map;
+
 public class Solution {
     /**
      * You will be given an integer called number and an array called possibleFamilyMembers
@@ -18,6 +20,25 @@ public class Solution {
      * @return
      */
     public Integer[] numberFamily(Integer number, Integer[] possibleFamilyMembers){
+        // Make variables nearNumber and aheadNumber
+        // Set conditions to see if Integer number has numbers close to them by using >= or <=
+        // Use a for loop to go through the possibleFamilyMembers from left to right
+            // If nearNumber and aheadNumber values that are closer to number
+                // grab the values and group them in the new list
+        // return the list of possible family members
+
+        int nearNumber = 0;
+        int aheadNumber = 0;
+
+        for (int i = number; i < possibleFamilyMembers.length-1; i++){
+            int currentNum = possibleFamilyMembers[number];
+            if (currentNum >= i-1){
+                number = nearNumber;
+            }
+            if (currentNum <= i+1){
+                number = aheadNumber;
+            }
+        }
         return null;
     }
 }
